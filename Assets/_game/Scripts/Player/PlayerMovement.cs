@@ -8,15 +8,20 @@ using UnityEngine.Rendering;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")] 
-    [Tooltip("Player Movement Speed")] 
+    [Tooltip("Player movement speed")] 
     [SerializeField] private float moveSpeed;
 
     [Header("Dash")]
-    [Tooltip("Player Dash Speed")]
+    [Tooltip("Player dash speed")]
     [SerializeField] private float dashSpeed;
+    private float dashTime;
+    [Tooltip("Time player is dashing")]
+    [SerializeField] private float startDashTime;
     private float dashCooldown;
     [Tooltip("Dash cooldown")]
     [SerializeField] private float startDashCooldown;
+
+    private Vector3 direction;
     private bool isDashing = false;
 
     private Rigidbody _rigidbody;
@@ -36,24 +41,29 @@ public class PlayerMovement : MonoBehaviour
             {
                 isDashing = true;
                 dashCooldown = startDashCooldown;
+                dashTime = startDashTime;
             }
         }
 
+        if (dashTime <= 0) isDashing = false;
+
         dashCooldown -= Time.deltaTime;
+        dashTime -= Time.deltaTime;
     }
 
     void FixedUpdate()
     {
-        Vector3 move = _controlManager.Movement();
-
         float speed = moveSpeed;
 
         if (isDashing)
         {
             speed = dashSpeed;
-            isDashing = false;
+        }
+        else
+        {
+            direction = _controlManager.Movement();
         }
 
-        _rigidbody.velocity = move * speed;
+        _rigidbody.velocity = direction * speed;
     }
 }
