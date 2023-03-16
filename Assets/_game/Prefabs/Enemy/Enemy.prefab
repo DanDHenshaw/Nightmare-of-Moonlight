@@ -137,6 +137,7 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 64
-  timeBetweenAttacks: 5
+  timeBetweenAttacks: 2
+  attackDamage: 10
   attackRange: 2
   playerInAttackRange: 0

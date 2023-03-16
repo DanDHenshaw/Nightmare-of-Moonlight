@@ -552,7 +552,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.19814275, y: -0.15105446, z: 0.030920738, w: 0.96797}
+  m_LocalRotation: {x: 0.19814274, y: -0.15105447, z: 0.03092074, w: 0.96797}
   m_LocalPosition: {x: -3.9798412, y: -4.7356405, z: 5.02333}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -937,7 +937,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1568088702}
-  m_LocalRotation: {x: 0.1182438, y: -0.79126984, z: 0.16197236, w: 0.57764643}
+  m_LocalRotation: {x: 0.1182438, y: -0.79126984, z: 0.16197234, w: 0.57764643}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1130,6 +1130,7 @@ GameObject:
   - component: {fileID: 1783214042}
   - component: {fileID: 1783214048}
   - component: {fileID: 1783214047}
+  - component: {fileID: 1783214049}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -1260,6 +1261,19 @@ MonoBehaviour:
   dashSpeed: 100
   startDashTime: 0.1
   startDashCooldown: 5
+--- !u!114 &1783214049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783214041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dd46f4bd8576b3478b93dff11a56294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data: {fileID: 11400000, guid: f234a3091ff3927419824faf9b767793, type: 2}
 --- !u!1 &1808205136
 GameObject:
   m_ObjectHideFlags: 0

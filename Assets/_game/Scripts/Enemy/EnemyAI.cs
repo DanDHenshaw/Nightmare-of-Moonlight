@@ -8,12 +8,14 @@ public class EnemyAI : MonoBehaviour
     private NavMeshAgent _agent;
 
     private Transform _target;
+    private HealthSystem _healthSystem;
 
     [SerializeField] private LayerMask whatIsPlayer;
 
     [Header("Attacking")]
     [SerializeField] private float timeBetweenAttacks;
     private bool alreadyAttacked;
+    [SerializeField] private float attackDamage;
 
     [Header("States")]
     [SerializeField] private float attackRange;
@@ -22,6 +24,8 @@ public class EnemyAI : MonoBehaviour
     void Awake()
     {
         _target = GameObject.Find("Player").transform;
+        _healthSystem = _target.gameObject.GetComponent<HealthSystem>();
+
         _agent = GetComponent<NavMeshAgent>();
     }
 
@@ -46,6 +50,7 @@ public class EnemyAI : MonoBehaviour
         if (!alreadyAttacked)
         {
             // Enemy Attack
+            _healthSystem.TakeDamage(attackDamage);
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
