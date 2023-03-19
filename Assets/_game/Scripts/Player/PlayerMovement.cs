@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")] 
     [Tooltip("Player movement speed")] 
     [SerializeField] private float moveSpeed;
-
+     
     [Header("Dash")]
     [Tooltip("Player dash speed")]
     [SerializeField] private float dashSpeed;
@@ -16,9 +16,9 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("Dash cooldown")]
     [SerializeField] private float startDashCooldown;
 
-    private Vector3 direction;
-    private bool isDashing = false;
-    private bool dashCooldown = false;
+    private Vector2 _direction;
+    private bool _isDashing = false;
+    private bool _dashCooldown = false;
 
     private Rigidbody _rigidbody;
     private PlayerControlManager _controlManager;
@@ -31,12 +31,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (!dashCooldown)
+        if (!_dashCooldown)
         {
             if (_controlManager.HasDashed())
             {
-                isDashing = true;
-                dashCooldown = true;
+                _isDashing = true;
+                _dashCooldown = true;
                 
                 Invoke(nameof(ResetDash), startDashTime);
                 Invoke(nameof(ResetDashCooldown), startDashCooldown);
@@ -48,25 +48,26 @@ public class PlayerMovement : MonoBehaviour
     {
         float speed = moveSpeed;
 
-        if (isDashing)
+        if (_isDashing)
         {
             speed = dashSpeed;
         }
         else
         {
-            direction = _controlManager.Movement();
+            _direction = _controlManager.Movement();
         }
 
-        _rigidbody.velocity = direction * speed;
+        Vector3 move = transform.forward * _direction.y * speed + transform.right * _direction.x * speed;
+        _rigidbody.velocity = move;
     }
 
     void ResetDash()
     {
-        isDashing = false;
+        _isDashing = false;
     }
 
     void ResetDashCooldown()
     {
-        dashCooldown = false;
+        _dashCooldown = false;
     }
 }

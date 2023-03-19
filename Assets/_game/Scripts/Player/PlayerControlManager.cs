@@ -14,10 +14,9 @@ public class PlayerControlManager : MonoBehaviour
         _controls.Player.Dash.canceled += ctx => isDashing = false;
     }
 
-    public Vector3 Movement()
+    public Vector2 Movement()
     {
-        Vector2 move = _controls.Player.Movement.ReadValue<Vector2>();
-        return new Vector3(move.x, 0, move.y);
+        return _controls.Player.Movement.ReadValue<Vector2>();
     }
 
     public bool HasDashed()
