@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: a1f76b2e38fb9a04aa0a8edba19fc358, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 562e2d5b456df234e8fe42fbf5697671, type: 2}
 --- !u!1 &339810467
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,7 +365,7 @@ Transform:
   m_Children:
   - {fileID: 1633345592}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -549,7 +549,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1315349606
 GameObject:
@@ -1061,7 +1061,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
 --- !u!114 &1783214047
 MonoBehaviour:
@@ -1133,7 +1133,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2090638893
 GameObject:
@@ -1168,6 +1168,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &434730658240723622
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 434730657534433513, guid: c1f63ba9aed8c5840a1f0bb707c8f681, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 434730657534433513, guid: c1f63ba9aed8c5840a1f0bb707c8f681, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 434730657534433513, guid: c1f63ba9aed8c5840a1f0bb707c8f681, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 434730657534433513, guid: c1f63ba9aed8c5840a1f0bb707c8f681, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 434730657534433513, guid: c1f63ba9aed8c5840a1f0bb707c8f681, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 434730657534433513, guid: c1f63ba9aed8c5840a1f0bb707c8f681, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 434730657534433513, guid: c1f63ba9aed8c5840a1f0bb707c8f681, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 434730657534433513, guid: c1f63ba9aed8c5840a1f0bb707c8f681, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 434730657534433513, guid: c1f63ba9aed8c5840a1f0bb707c8f681, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 434730657534433513, guid: c1f63ba9aed8c5840a1f0bb707c8f681, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 434730657534433513, guid: c1f63ba9aed8c5840a1f0bb707c8f681, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 434730657534433514, guid: c1f63ba9aed8c5840a1f0bb707c8f681, type: 3}
+      propertyPath: m_Name
+      value: Scene Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c1f63ba9aed8c5840a1f0bb707c8f681, type: 3}
 --- !u!1001 &1131804985252051612
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1181,11 +1238,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1131804986129742697, guid: 1bb299aa42d03b14b9c7203f86fde4fa, type: 3}
       propertyPath: _waves.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1131804986129742697, guid: 1bb299aa42d03b14b9c7203f86fde4fa, type: 3}
       propertyPath: _waves.Array.data[0].name
-      value: Sex
+      value: Test
       objectReference: {fileID: 0}
     - target: {fileID: 1131804986129742697, guid: 1bb299aa42d03b14b9c7203f86fde4fa, type: 3}
       propertyPath: _waves.Array.data[1].name
@@ -1209,11 +1266,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1131804986129742697, guid: 1bb299aa42d03b14b9c7203f86fde4fa, type: 3}
       propertyPath: _waves.Array.data[0].gizmoColor.g
-      value: 0.059916675
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1131804986129742697, guid: 1bb299aa42d03b14b9c7203f86fde4fa, type: 3}
       propertyPath: _waves.Array.data[0].gizmoColor.r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1131804986129742697, guid: 1bb299aa42d03b14b9c7203f86fde4fa, type: 3}
       propertyPath: _waves.Array.data[1].gizmoColor.a
@@ -1233,7 +1290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1131804986129742697, guid: 1bb299aa42d03b14b9c7203f86fde4fa, type: 3}
       propertyPath: _waves.Array.data[0].enemiesToSpawn
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1131804986129742697, guid: 1bb299aa42d03b14b9c7203f86fde4fa, type: 3}
       propertyPath: _waves.Array.data[0].enemySpawnRate
@@ -1249,7 +1306,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1131804986129742697, guid: 1bb299aa42d03b14b9c7203f86fde4fa, type: 3}
       propertyPath: _waves.Array.data[0].spawnPosition.x
-      value: 15
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131804986129742697, guid: 1bb299aa42d03b14b9c7203f86fde4fa, type: 3}
+      propertyPath: _waves.Array.data[0].spawnPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1131804986129742697, guid: 1bb299aa42d03b14b9c7203f86fde4fa, type: 3}
       propertyPath: _waves.Array.data[1].spawnPosition.x

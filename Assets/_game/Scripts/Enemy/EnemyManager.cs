@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    public enum SpawnState { SPAWNING, WAITING, COUNTING }
+    public enum SpawnState { SPAWNING, WAITING, COUNTING, COMPLETE }
     private SpawnState _state = SpawnState.COUNTING;
 
     [System.Serializable]
@@ -43,6 +43,8 @@ public class EnemyManager : MonoBehaviour
 
     private float _searchCountdown = 1f;
 
+    public bool isComplete = false;
+
     void Start()
     {
         _waveCountdown = _timeBetweenWaves;
@@ -64,6 +66,13 @@ public class EnemyManager : MonoBehaviour
             }
         }
 
+        if (_state == SpawnState.COMPLETE)
+        {
+            isComplete = true;
+            // Stops wave progressing
+            return;
+        }
+
         if (_waveCountdown <= 0)
         {
             if (_state != SpawnState.SPAWNING)
@@ -80,18 +89,19 @@ public class EnemyManager : MonoBehaviour
 
     void WaveComplete()
     {
-        Debug.Log("Wave Complete!");
-
-        _state = SpawnState.COUNTING;
-        _waveCountdown = _timeBetweenWaves;
-
         if (nextWave + 1 > _waves.Length - 1)
         {
-            nextWave = 0;
             Debug.Log("All Waves Complete!");
+
+            _state = SpawnState.COMPLETE;
         }
         else
         {
+            Debug.Log("Wave Complete!");
+
+            _state = SpawnState.COUNTING;
+            _waveCountdown = _timeBetweenWaves;
+
             nextWave++;
         }
     }
