@@ -6,7 +6,7 @@ public class HealthSystem : MonoBehaviour
 {
     [SerializeField] private HealthData _data;
 
-    private float _health;
+    [HideInInspector] public float _health { get; private set; }
 
     void Awake()
     {
