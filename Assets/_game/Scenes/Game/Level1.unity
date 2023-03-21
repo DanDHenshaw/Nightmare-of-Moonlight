@@ -575,6 +575,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Scene Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 434730657534433514, guid: c1f63ba9aed8c5840a1f0bb707c8f681, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1f63ba9aed8c5840a1f0bb707c8f681, type: 3}
 --- !u!1 &1125170167
@@ -1236,17 +1240,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 1131804986129742697, guid: 1bb299aa42d03b14b9c7203f86fde4fa, type: 3}
-      propertyPath: _waves.Array.size
+    - target: {fileID: 1131804986129742696, guid: 1bb299aa42d03b14b9c7203f86fde4fa, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1131804986129742697, guid: 1bb299aa42d03b14b9c7203f86fde4fa, type: 3}
+      propertyPath: _waves.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1131804986129742697, guid: 1bb299aa42d03b14b9c7203f86fde4fa, type: 3}
       propertyPath: _waves.Array.data[0].name
-      value: Test
+      value: Bob
       objectReference: {fileID: 0}
     - target: {fileID: 1131804986129742697, guid: 1bb299aa42d03b14b9c7203f86fde4fa, type: 3}
       propertyPath: _waves.Array.data[1].name
-      value: Sex
+      value: Gary
       objectReference: {fileID: 0}
     - target: {fileID: 1131804986129742697, guid: 1bb299aa42d03b14b9c7203f86fde4fa, type: 3}
       propertyPath: _waves.Array.data[0].spawnRadius
@@ -1254,7 +1262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1131804986129742697, guid: 1bb299aa42d03b14b9c7203f86fde4fa, type: 3}
       propertyPath: _waves.Array.data[1].spawnRadius
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1131804986129742697, guid: 1bb299aa42d03b14b9c7203f86fde4fa, type: 3}
       propertyPath: _waves.Array.data[0].gizmoColor.a
@@ -1270,7 +1278,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1131804986129742697, guid: 1bb299aa42d03b14b9c7203f86fde4fa, type: 3}
       propertyPath: _waves.Array.data[0].gizmoColor.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1131804986129742697, guid: 1bb299aa42d03b14b9c7203f86fde4fa, type: 3}
       propertyPath: _waves.Array.data[1].gizmoColor.a
@@ -1278,15 +1286,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1131804986129742697, guid: 1bb299aa42d03b14b9c7203f86fde4fa, type: 3}
       propertyPath: _waves.Array.data[1].gizmoColor.b
-      value: 0
+      value: 0.034508705
       objectReference: {fileID: 0}
     - target: {fileID: 1131804986129742697, guid: 1bb299aa42d03b14b9c7203f86fde4fa, type: 3}
       propertyPath: _waves.Array.data[1].gizmoColor.g
-      value: 0.059916675
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1131804986129742697, guid: 1bb299aa42d03b14b9c7203f86fde4fa, type: 3}
       propertyPath: _waves.Array.data[1].gizmoColor.r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1131804986129742697, guid: 1bb299aa42d03b14b9c7203f86fde4fa, type: 3}
       propertyPath: _waves.Array.data[0].enemiesToSpawn
@@ -1310,7 +1318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1131804986129742697, guid: 1bb299aa42d03b14b9c7203f86fde4fa, type: 3}
       propertyPath: _waves.Array.data[1].spawnPosition.x
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1131804986129742697, guid: 1bb299aa42d03b14b9c7203f86fde4fa, type: 3}
       propertyPath: _waves.Array.data[0].enemies.Array.size
