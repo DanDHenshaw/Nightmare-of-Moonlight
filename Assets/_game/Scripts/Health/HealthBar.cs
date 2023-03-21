@@ -12,7 +12,6 @@ public class HealthBar : MonoBehaviour
         _healthSystem = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthSystem>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         HealthBarFiller();
