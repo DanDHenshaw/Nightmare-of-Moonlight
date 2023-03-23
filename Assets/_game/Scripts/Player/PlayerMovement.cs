@@ -75,12 +75,33 @@ public class PlayerMovement : MonoBehaviour
     {
         if(move.magnitude > 0)
         {
-            if (move.x < 0 && move.z > 0 || move.x < 0 && move.z < 0)
+            if (move.x < 0)
             {
                 _animator.SetBool("isFacingLeft", true);
                 _animator.SetBool("isMoving", true);
             }
+            if (move.x > 0)
+            {
+                _animator.SetBool("isFacingLeft", false);
+                _animator.SetBool("isMoving", true);
+            }
 
+            if (move.z < 0)
+            {
+                _animator.SetBool("isFacingLeft", false);
+                _animator.SetBool("isMoving", true);
+            }
+            if (move.z > 0)
+            {
+                _animator.SetBool("isFacingLeft", false);
+                _animator.SetBool("isMoving", true);
+            }
+
+            if (move.x < 0 && move.z > 0 || move.x < 0 && move.z < 0)
+            {
+                _animator.SetBool("isFacingLeft", true);
+                _animator.SetBool("isMoving", true);
+            } 
             if (move.x > 0 && move.z > 0 || move.x > 0 && move.z < 0)
             {
                 _animator.SetBool("isFacingLeft", false);
