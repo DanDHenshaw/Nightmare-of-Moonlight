@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(HealthData))]
 public class HealthSystem : MonoBehaviour
 {
     [SerializeField] private HealthData _data;

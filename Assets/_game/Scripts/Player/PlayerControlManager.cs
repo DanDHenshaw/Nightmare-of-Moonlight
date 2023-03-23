@@ -16,6 +16,8 @@ public class PlayerControlManager : MonoBehaviour
 
     public Vector2 Movement()
     {
+        Vector2 move = _controls.Player.Movement.ReadValue<Vector2>();
+
         return _controls.Player.Movement.ReadValue<Vector2>();
     }
 
