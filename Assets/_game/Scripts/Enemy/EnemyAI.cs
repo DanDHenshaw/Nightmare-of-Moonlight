@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,6 +9,9 @@ public class EnemyAI : MonoBehaviour
 
     private Transform _target;
     private HealthSystem _healthSystem;
+
+    private SpriteRenderer _sprite;
+    private Animator _animator;
 
     [SerializeField] private LayerMask whatIsPlayer;
 
@@ -26,6 +30,9 @@ public class EnemyAI : MonoBehaviour
         _healthSystem = _target.gameObject.GetComponent<HealthSystem>();
 
         _agent = GetComponent<NavMeshAgent>();
+
+        _sprite = GetComponentInChildren<SpriteRenderer>();
+        _animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -34,6 +41,22 @@ public class EnemyAI : MonoBehaviour
 
         if(!playerInAttackRange) { ChasePlayer(); }
         else { AttackPlayer(); }
+
+        // Flips Sprite
+        _sprite.flipX = _target.transform.position.x > transform.position.x;
+
+        // Check if moving
+        if (Vector3.Distance(_agent.destination, _agent.transform.position) <= attackRange)
+        {
+            if (_agent.velocity.sqrMagnitude == 0f)
+            {
+                _animator.SetBool("Moving", false);
+            }
+        }
+        else
+        {
+            _animator.SetBool("Moving", true);
+        }
     }
 
     private void ChasePlayer()
@@ -49,10 +72,18 @@ public class EnemyAI : MonoBehaviour
         if (!alreadyAttacked)
         {
             // Enemy Attack
-            _healthSystem.TakeDamage(attackDamage);
+            _animator.SetTrigger("Attack");
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
+        }
+    }
+
+    private void DamagePlayer()
+    {
+        if (playerInAttackRange)
+        {
+            _healthSystem.TakeDamage(attackDamage);
         }
     }
 
