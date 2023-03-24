@@ -33,6 +33,8 @@ public class HealthSystem : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
                 break;
             case HealthData.Type.Enemy:
+                Debug.Log(gameObject.name + " damaged!");
+                Destroy(gameObject);
                 break;
             case HealthData.Type.Boss:
                 break;
