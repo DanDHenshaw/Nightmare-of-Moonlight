@@ -56,7 +56,10 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        _weaponSystem.isFacingLeft = _isFacingLeft;
+        if (_weaponSystem)
+        {
+            _weaponSystem.isFacingLeft = _isFacingLeft;
+        }
     }
 
     void FixedUpdate()

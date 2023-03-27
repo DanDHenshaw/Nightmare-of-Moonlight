@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 720656918255049698}
   - component: {fileID: 720656918255049699}
   - component: {fileID: 1454017154}
+  - component: {fileID: 8099456748470921995}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -123,3 +124,16 @@ MonoBehaviour:
   _enemyMask:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &8099456748470921995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720656918255049696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5f842346fbc0bb4f8d065a534df8553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: 2
