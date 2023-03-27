@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "HealthData", menuName = "Health/Health Data")]
+[CreateAssetMenu(fileName = "HealthData", menuName = "Data/Health/Health Data")]
 public class HealthData : ScriptableObject
 {
     public enum Type

@@ -23,11 +23,14 @@ public class PlayerMovement : MonoBehaviour
     private bool _dashCooldown = false;
 
     private bool _isFacingLeft = false;
+    private bool _isMoving = false;
 
     private Rigidbody _rigidbody;
     private PlayerControlManager _controlManager;
 
     private Animator _animator;
+
+    private WeaponSystem _weaponSystem;
 
     void Awake()
     {
@@ -35,13 +38,15 @@ public class PlayerMovement : MonoBehaviour
         _controlManager = GetComponent<PlayerControlManager>();
 
         _animator = GetComponent<Animator>();
+
+        ReplaceWeapon();
     }
 
     void Update()
     {
         if (!_dashCooldown)
         {
-            if (_controlManager.HasDashed())
+            if (_controlManager.isDashing)
             {
                 _isDashing = true;
                 _dashCooldown = true;
@@ -50,6 +55,8 @@ public class PlayerMovement : MonoBehaviour
                 Invoke(nameof(ResetDashCooldown), startDashCooldown);
             }
         }
+
+        _weaponSystem.isFacingLeft = _isFacingLeft;
     }
 
     void FixedUpdate()
@@ -77,41 +84,49 @@ public class PlayerMovement : MonoBehaviour
         {
             if (move.x < 0)
             {
-                _animator.SetBool("isFacingLeft", true);
-                _animator.SetBool("isMoving", true);
+                _isFacingLeft = true;
+                _isMoving = true;
             }
             if (move.x > 0)
             {
-                _animator.SetBool("isFacingLeft", false);
-                _animator.SetBool("isMoving", true);
+                _isFacingLeft = false;
+                _isMoving = true;
             }
 
             if (move.z < 0)
             {
-                _animator.SetBool("isFacingLeft", false);
-                _animator.SetBool("isMoving", true);
+                _isFacingLeft = false;
+                _isMoving = true;
             }
             if (move.z > 0)
             {
-                _animator.SetBool("isFacingLeft", false);
-                _animator.SetBool("isMoving", true);
+                _isFacingLeft = false;
+                _isMoving = true;
             }
 
             if (move.x < 0 && move.z > 0 || move.x < 0 && move.z < 0)
             {
-                _animator.SetBool("isFacingLeft", true);
-                _animator.SetBool("isMoving", true);
+                _isFacingLeft = true;
+                _isMoving = true;
             } 
             if (move.x > 0 && move.z > 0 || move.x > 0 && move.z < 0)
             {
-                _animator.SetBool("isFacingLeft", false);
-                _animator.SetBool("isMoving", true);
+                _isFacingLeft = false;
+                _isMoving = true;
             }
         }
         else
         {
-            _animator.SetBool("isMoving", false);
+            _isMoving = false;
         }
+
+        _animator.SetBool("isFacingLeft", _isFacingLeft);
+        _animator.SetBool("isMoving", _isMoving);
+    }
+
+    public void ReplaceWeapon()
+    {
+        _weaponSystem = GetComponentInChildren<WeaponSystem>();
     }
 
     void ResetDash()

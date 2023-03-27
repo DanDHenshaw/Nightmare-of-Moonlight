@@ -4,7 +4,8 @@ public class PlayerControlManager : MonoBehaviour
 {
     private Controls _controls;
 
-    private bool isDashing = false;
+    [HideInInspector] public bool isDashing { get; private set; } = false;
+    [HideInInspector] public bool isAttacking {get; private set; } = false;
 
     void Awake()
     {
@@ -12,6 +13,9 @@ public class PlayerControlManager : MonoBehaviour
 
         _controls.Player.Dash.performed += ctx => isDashing = true;
         _controls.Player.Dash.canceled += ctx => isDashing = false;
+
+        _controls.Player.Attack.performed += ctx => isAttacking = true;
+        _controls.Player.Attack.canceled += ctx => isAttacking = false;
     }
 
     public Vector2 Movement()
@@ -19,11 +23,6 @@ public class PlayerControlManager : MonoBehaviour
         Vector2 move = _controls.Player.Movement.ReadValue<Vector2>();
 
         return _controls.Player.Movement.ReadValue<Vector2>();
-    }
-
-    public bool HasDashed()
-    {
-        return isDashing;
     }
 
     private void OnEnable()
