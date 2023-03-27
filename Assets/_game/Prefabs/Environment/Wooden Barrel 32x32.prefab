@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9011260523598989943}
   - component: {fileID: 9011260523598989940}
   - component: {fileID: 823008710546024175}
+  - component: {fileID: -7134597098405556639}
   m_Layer: 0
   m_Name: Wooden Barrel 32x32
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: c6a5aa27536143a4db8394aa1a2ebb28, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -97,3 +98,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4781895b824d294696ac8e1e74fbef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &-7134597098405556639
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9011260523598989941}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
