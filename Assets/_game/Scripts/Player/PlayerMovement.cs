@@ -8,6 +8,14 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")] 
     [Tooltip("Player movement speed")] 
     [SerializeField] private float moveSpeed;
+
+    [System.Serializable]
+    private struct FootstepPitch
+    {
+        public float low;
+        public float high;
+    }
+    [SerializeField] private FootstepPitch footstepPitch;
      
     [Header("Dash")]
     [Tooltip("Player dash speed")]
@@ -31,12 +39,16 @@ public class PlayerMovement : MonoBehaviour
 
     private WeaponSystem _weaponSystem;
 
+    private AudioSource _audioSource;
+
     void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _controlManager = GetComponent<PlayerControlManager>();
 
         _animator = GetComponent<Animator>();
+
+        _audioSource = GetComponentInChildren<AudioSource>();
 
         ReplaceWeapon();
     }
@@ -124,6 +136,12 @@ public class PlayerMovement : MonoBehaviour
 
         _animator.SetBool("isFacingLeft", _isFacingLeft);
         _animator.SetBool("isMoving", _isMoving);
+    }
+
+    void FootstepSound()
+    {
+        _audioSource.pitch = Random.Range(footstepPitch.low, footstepPitch.high);
+        _audioSource.Play();
     }
 
     public void ReplaceWeapon()

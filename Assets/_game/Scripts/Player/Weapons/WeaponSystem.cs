@@ -27,7 +27,7 @@ public class WeaponSystem : MonoBehaviour
 
         if (!_attackCooldown)
         {
-            if (_controlManager.isAttacking)
+            if (_controlManager.isAttacking) 
             {
                 _attackCooldown = true;
 
