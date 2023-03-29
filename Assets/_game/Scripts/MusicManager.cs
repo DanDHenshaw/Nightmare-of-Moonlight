@@ -17,13 +17,14 @@ public class MusicManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         _audioSource = GetComponent<AudioSource>();
+
+        _audioSource.clip = _audioClips[Random.Range(0, _audioClips.Length)];
     }
 
     void Update()
     {
         if (!_audioSource.isPlaying)
         {
-            _audioSource.clip = _audioClips[Random.Range(0, _audioClips.Length)];
             _audioSource.Play();
         }
     }

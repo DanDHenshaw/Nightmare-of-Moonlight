@@ -30,7 +30,7 @@ public class HealthSystem : MonoBehaviour
         switch (_data.type)
         {
             case HealthData.Type.Player:
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+                SceneManager.LoadSceneAsync("DeathScreen");
                 break;
             case HealthData.Type.Enemy:
                 Debug.Log(gameObject.name + " damaged!");
