@@ -39,7 +39,8 @@ public class PlayerMovement : MonoBehaviour
 
     private WeaponSystem _weaponSystem;
 
-    private AudioSource _audioSource;
+    private AudioSource _footstepSource;
+    private AudioSource _abilitySource;
 
     void Awake()
     {
@@ -48,7 +49,8 @@ public class PlayerMovement : MonoBehaviour
 
         _animator = GetComponent<Animator>();
 
-        _audioSource = GetComponentInChildren<AudioSource>();
+        _footstepSource = gameObject.transform.Find("Footsteps").GetComponent<AudioSource>();
+        _abilitySource = gameObject.transform.Find("AbilitySound").GetComponent<AudioSource>();
 
         ReplaceWeapon();
     }
@@ -140,8 +142,8 @@ public class PlayerMovement : MonoBehaviour
 
     void FootstepSound()
     {
-        _audioSource.pitch = Random.Range(footstepPitch.low, footstepPitch.high);
-        _audioSource.Play();
+        _footstepSource.pitch = Random.Range(footstepPitch.low, footstepPitch.high);
+        _footstepSource.Play();
     }
 
     public void ReplaceWeapon()
@@ -157,5 +159,6 @@ public class PlayerMovement : MonoBehaviour
     void ResetDashCooldown()
     {
         _dashCooldown = false;
+        _abilitySource.Play();
     }
 }
